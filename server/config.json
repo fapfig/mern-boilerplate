@@ -1,0 +1,14 @@
+﻿{
+  "connectionString": "mongodb+srv://fabio:abcd1234@clusterdb.qsrsy.mongodb.net/jason-mern?retryWrites=true&w=majority",
+  "secret": "Alo56#iLd898!alihA",
+  "emailFrom": "sc.mailing@civil.uminho.pt",
+  "smtpOptions": {
+    "host": "mail.uminho.pt",
+    "port": 25,
+    "auth": {
+      "name": "AIpFRC",
+      "user": "civil-sc.mailing",
+      "pass": "MSSU8PEF7"
+    }
+  }
+}
