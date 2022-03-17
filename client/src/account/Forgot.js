@@ -50,7 +50,7 @@ export default function Forgot() {
               Trouble signing in?
             </Typography>
 
-            <Typography component="body1" variant="body1">
+            <Typography variant="body1">
               Don't worry, we've got your back! Just enter your email address
               and we'll send you a link with which you can reset your password.
             </Typography>

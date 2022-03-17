@@ -1,6 +1,6 @@
 import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Typography, Box, Container, Grid, Link } from "@mui/material";
+import { Typography, Box, Grid, Link } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 function Copyright() {
@@ -27,9 +27,7 @@ export default function account() {
     >
       <CssBaseline />
 
-      {/* <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm"> */}
       <Outlet />
-      {/* </Container> */}
 
       <Box
         component="footer"
