@@ -1,18 +1,19 @@
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
+import {
+  Avatar,
+  Button,
+  TextField,
+  Typography,
+  Paper,
+  Box,
+  Grid,
+  Link,
+  Checkbox,
+  FormControlLabel,
+  Container,
+} from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Link as LinkRouter } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 import { accountService } from "../services";
 
@@ -33,8 +34,6 @@ function Copyright(props) {
     </Typography>
   );
 }
-
-const theme = createTheme();
 
 export default function Signin() {
   const handleSubmit = (event) => {
@@ -59,11 +58,11 @@ export default function Signin() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
+    <Container component="main" maxWidth="xs">
+      <Paper>
         <Box
           sx={{
+            p: 3,
             marginTop: 8,
             display: "flex",
             flexDirection: "column",
@@ -118,38 +117,28 @@ export default function Signin() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link
+                  component={RouterLink}
+                  to="/account/forgot"
+                  variant="body2"
+                >
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <LinkRouter to="account/signup">
-                  {"Don't have an account? Sign Up"}
-                </LinkRouter>
+                {"Don't have an account? "}
+                <Link
+                  component={RouterLink}
+                  to="/account/signup"
+                  variant="body2"
+                >
+                  Sign Up
+                </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Button
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-          onClick={() =>
-            accountService.getAll().then((data) => console.log(data))
-          }
-        >
-          Get all
-        </Button>
-        <Button
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-          onClick={() => accountService.logout()}
-        >
-          Logout
-        </Button>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
-      </Container>
-    </ThemeProvider>
+      </Paper>
+    </Container>
   );
 }
